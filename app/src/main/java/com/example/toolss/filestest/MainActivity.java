@@ -93,3 +93,8 @@ public class MainActivity extends AppCompatActivity {
         seekBar.setProgress(fontSize);
     }
 }
+
+
+
+
+//one hundred string
