@@ -12,17 +12,34 @@
          android:id="@+id/editText"
          android:layout_width="match_parent"
          android:layout_height="match_parent"
-         android:layout_below="@+id/seekBar"
-         android:min="1"
-         android:max="100"
-         android:progress="10"
-         />
+          />
 
      <SeekBar
          android:id="@+id/seekBar"
          android:layout_width="match_parent"
          android:layout_height="wrap_content"
+         android:min="1"
+         android:max="100"
+         android:progress="10"
 
          />
+
+     <ToggleButton
+         android:id="@+id/upDown"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_below="@+id/seekBar"
+
+         android:text="ToggleButton" />
+
+     <ToggleButton
+         android:id="@+id/leftRight"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+
+         android:text="ToggleButton"
+         android:layout_below="@+id/seekBar"
+         android:layout_toRightOf="@+id/upDown"
+         android:layout_toEndOf="@+id/upDown" />
 
 </RelativeLayout>

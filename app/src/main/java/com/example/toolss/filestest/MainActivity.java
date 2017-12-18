@@ -3,9 +3,12 @@ package com.example.toolss.filestest;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -19,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText text;
     private SeekBar seekBar;
+    private ToggleButton toggleButton1;
+    private ToggleButton toggleButton2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +31,22 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         text = (EditText)(findViewById(R.id.editText));
         seekBar = (SeekBar) findViewById(R.id.seekBar);
+        toggleButton2 = (ToggleButton) findViewById(R.id.leftRight);
+        toggleButton1 = (ToggleButton) findViewById(R.id.upDown);
+        toggleButton2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b) text.setGravity(Gravity.LEFT);
+                else text.setGravity(Gravity.RIGHT);
+            }
+        });
+        toggleButton1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b)text.setGravity(Gravity.TOP);
+                else text.setGravity(Gravity.BOTTOM);
+            }
+        });
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
