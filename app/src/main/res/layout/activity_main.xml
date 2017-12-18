@@ -12,6 +12,16 @@
          android:id="@+id/editText"
          android:layout_width="match_parent"
          android:layout_height="match_parent"
+         android:layout_below="@+id/seekBar"
+         android:min="1"
+         android:max="100"
+         android:progress="10"
+         />
+
+     <SeekBar
+         android:id="@+id/seekBar"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
 
          />
 
